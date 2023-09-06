@@ -41,7 +41,7 @@ endef
 define Package/$(PKG_NAME)/postinst
 #!/bin/sh
 if [ -z "$${IPKG_INSTROOT}" ]; then
-	[ -f /etc/uci-defaults/ynn ] && /etc/uci-defaults/ynn && rm -f /etc/uci-defaults/ynn
+	[ -f /etc/uci-defaults/ynnclient ] && /etc/uci-defaults/ynnclient && rm -f /etc/uci-defaults/ynnclient
 fi
 endef
 
