@@ -35,7 +35,6 @@ define Package/$(PKG_NAME)/description
 endef
 
 define Package/$(PKG_NAME)/conffiles
-/etc/config/ynn
 endef
 
 define Package/$(PKG_NAME)/postinst
