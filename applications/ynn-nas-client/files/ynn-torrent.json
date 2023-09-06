@@ -1,0 +1,8 @@
+{
+  "AutoStart": false,
+  "DisableEncryption": false,
+  "DownloadDirectory": "/mnt/data_sda/YnnBdDownload/movies",
+  "EnableUpload": true,
+  "EnableSeeding": true,
+  "IncomingPort": 50007
+}

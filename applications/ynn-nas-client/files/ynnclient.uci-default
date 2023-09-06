@@ -1,0 +1,17 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	delete firewall.ynnclient
+	set firewall.ynnclient=rule
+	set firewall.ynnclient.name="ynnclient"
+	set firewall.ynnclient.target="ACCEPT"
+	set firewall.ynnclient.src="wan"
+	set firewall.ynnclient.proto="tcp"
+	set firewall.ynnclient.dest_port="3002"
+	commit firewall
+EOF
+
+/etc/init.d/ynn-nas-client enable
+/etc/init.d/ynn-nas-client start
+
+exit 0
