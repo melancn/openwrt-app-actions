@@ -35,6 +35,7 @@ define Package/$(PKG_NAME)/description
 endef
 
 define Package/$(PKG_NAME)/conffiles
+/etc/config/ynnclient
 endef
 
 define Package/$(PKG_NAME)/postinst
@@ -57,6 +58,7 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ynn-tunnel $(1)/usr/sbin/ynn-tunnel
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/check-clinet-update.sh $(1)/usr/sbin/ynn-plugins/check-clinet-update.sh
 	$(INSTALL_CONF) ./files/ynn-torrent.json $(1)/etc/config/ynn-torrent.json
+	$(INSTALL_CONF) ./files/ynnclient.config $(1)/etc/config/ynnclient
 	$(INSTALL_BIN) ./files/ynn-torrent.init $(1)/etc/init.d/ynn-torrent
 	$(INSTALL_BIN) ./files/ynn-tunnel.init $(1)/etc/init.d/ynn-tunnel
 	$(INSTALL_BIN) ./files/ynn-nas-client.init $(1)/etc/init.d/ynn-nas-client

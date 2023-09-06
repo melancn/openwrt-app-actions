@@ -1,6 +1,11 @@
 #!/bin/sh
 
 uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@ynnclient[-1]
+	add ucitrack ynnclient
+	set ucitrack.@ynnclient[-1].init=ynnclient
+	commit ucitrack
+    
 	delete firewall.ynnclient
 	set firewall.ynnclient=rule
 	set firewall.ynnclient.name="ynnclient"
