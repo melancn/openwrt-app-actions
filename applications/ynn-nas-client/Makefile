@@ -9,10 +9,10 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ynn-nas-client
 PKG_VERSION:=1.0.0
-PKG_RELEASE:=RELEASE-2
+PKG_RELEASE:=RELEASE-test
 PKG_SOURCE:=$(PKG_NAME)-binary-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://test.movienn.com/nas/
-PKG_HASH:=64fdbefc26f96d22ef567b4070681e36ca7104086a2093c07f29ba8ccb088258
+PKG_HASH:=4e501172de799622a39721951d8656d51c8b8cc6f8c938158d9526c7f154b251
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-binary-$(PKG_VERSION)
 
@@ -56,7 +56,7 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ynn-nas-client $(1)/usr/sbin/ynn-nas-client
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ynn-torrent $(1)/usr/sbin/ynn-torrent
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ynn-tunnel $(1)/usr/sbin/ynn-tunnel
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/check-clinet-update.sh $(1)/usr/sbin/ynn-plugins/check-clinet-update.sh
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/check-client-update.sh $(1)/usr/sbin/ynn-plugins/check-client-update.sh
 	$(INSTALL_CONF) ./files/ynn-torrent.json $(1)/etc/config/ynn-torrent.json
 	$(INSTALL_CONF) ./files/ynnclient.config $(1)/etc/config/ynnclient
 	$(INSTALL_BIN) ./files/ynn-torrent.init $(1)/etc/init.d/ynn-torrent
