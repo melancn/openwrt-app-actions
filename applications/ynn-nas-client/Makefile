@@ -7,7 +7,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=ynn-nas-client
+PKG_NAME:=luci-app-ynn-nas-client
 PKG_VERSION:=1.0.0
 PKG_RELEASE:=RELEASE-test
 PKG_SOURCE:=$(PKG_NAME)-binary-$(PKG_VERSION).tar.gz
