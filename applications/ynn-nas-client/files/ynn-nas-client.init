@@ -6,6 +6,9 @@ pid_file="/var/run/$name.pid"
 stdout_log="/var/log/$name.log"
 stderr_log="/var/log/$name.err"
 START=99
+
+export LD_LIBRARY_PATH=LD_LIBRARY_PATH:/usr/lib/3rdpart/boost:/usr/lib/3rdpart/openssl-1.0.2k:/usr/lib/3rdpart/dlbt
+
 get_pid() {
     cat "$pid_file"
 }
