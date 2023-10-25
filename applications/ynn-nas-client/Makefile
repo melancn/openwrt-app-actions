@@ -53,7 +53,7 @@ define Build/Compile
 endef
 
 define Package/$(PKG_NAME)/install
-	$(INSTALL_DIR) $(1)/usr/sbin/ynn-plugins $(1)/etc/config $(1)/etc/init.d $(1)/etc/uci-defaults $(1)/usr/lib/3rdpart
+	$(INSTALL_DIR) $(1)/usr/sbin/ynn-plugins $(1)/etc/config $(1)/etc/init.d $(1)/etc/uci-defaults $(1)/usr/lib/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ynn-nas-client $(1)/usr/sbin/ynn-nas-client
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ynn-tunnel $(1)/usr/sbin/ynn-tunnel
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/check-client-update.sh $(1)/usr/sbin/ynn-plugins/check-client-update.sh
@@ -61,7 +61,7 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_BIN) ./files/ynn-tunnel.init $(1)/etc/init.d/ynn-tunnel
 	$(INSTALL_BIN) ./files/ynn-nas-client.init $(1)/etc/init.d/ynn-nas-client
 	$(INSTALL_BIN) ./files/ynnclient.uci-default $(1)/etc/uci-defaults/ynnclient
-	$(CP) $(PKG_BUILD_DIR)/3rdpart $(1)/usr/lib/3rdpart
+	$(CP) $(PKG_BUILD_DIR)/3rdpart $(1)/usr/lib/
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
