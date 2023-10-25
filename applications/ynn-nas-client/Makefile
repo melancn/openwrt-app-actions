@@ -61,7 +61,7 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_BIN) ./files/ynn-tunnel.init $(1)/etc/init.d/ynn-tunnel
 	$(INSTALL_BIN) ./files/ynn-nas-client.init $(1)/etc/init.d/ynn-nas-client
 	$(INSTALL_BIN) ./files/ynnclient.uci-default $(1)/etc/uci-defaults/ynnclient
-	$(CP) $(PKG_BUILD_DIR)/3rdpart $(1)/usr/lib/
+	$(CP) $(PKG_BUILD_DIR)/3rdpart $(1)/usr/lib/3rdpart/
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
