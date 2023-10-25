@@ -53,7 +53,7 @@ define Build/Compile
 endef
 
 define Package/$(PKG_NAME)/install
-	$(INSTALL_DIR) $(1)/usr/sbin/ynn-plugins $(1)/etc/config $(1)/etc/init.d $(1)/etc/uci-defaults
+	$(INSTALL_DIR) $(1)/usr/sbin/ynn-plugins $(1)/etc/config $(1)/etc/init.d $(1)/etc/uci-defaults $(1)/usr/lib/3rdpart/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ynn-nas-client $(1)/usr/sbin/ynn-nas-client
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ynn-tunnel $(1)/usr/sbin/ynn-tunnel
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/check-client-update.sh $(1)/usr/sbin/ynn-plugins/check-client-update.sh
