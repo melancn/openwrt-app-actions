@@ -11,7 +11,7 @@ PKG_NAME:=ynn-nas-client
 PKG_VERSION:=1.1.0
 PKG_RELEASE:=RELEASE
 PKG_SOURCE:=$(PKG_NAME)-binary-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://bt1.btcenter.movienn.com:17890/apk/ynn-nas-client-binary-1.1.0.tar.gz
+PKG_SOURCE_URL:=http://bt1.btcenter.movienn.com:17890/apk/
 PKG_HASH:=5b7583a6ad88782350b10f6829364c0ca9176614bdaea3970afb335ba2e4f738
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-binary-$(PKG_VERSION)
