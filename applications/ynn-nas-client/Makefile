@@ -8,11 +8,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ynn-nas-client
-PKG_VERSION:=1.5.1
+PKG_VERSION:=1.7.0
 PKG_RELEASE:=RELEASE
 PKG_SOURCE:=$(PKG_NAME)-binary-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://bt1.btcenter.movienn.com:17890/apk/
-PKG_HASH:=e47d9becb7c74271649b1ee9ed2a2074c2010c4ef31ea1c1764575eeacf0abce
+PKG_SOURCE_URL:=http://172.16.102.3/nas/
+PKG_HASH:=18a4dce98df2c501649ab9df5430bfe0e0af831f0bba36b51e4951b7300ec027
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-binary-$(PKG_VERSION)
 
