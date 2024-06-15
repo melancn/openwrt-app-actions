@@ -21,7 +21,7 @@ start() {
 	else
 		echo "Starting $name"
 		
-		$cmd >> "$stdout_log" 2>> "$stderr_log" &
+		$cmd -debug>> "$stdout_log" 2>> "$stderr_log" &
 		echo $! > "$pid_file"
 		if ! is_running; then
 			echo "Unable to start, see $stdout_log and $stderr_log"
