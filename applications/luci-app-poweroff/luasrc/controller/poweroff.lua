@@ -3,7 +3,7 @@ module("luci.controller.poweroff", package.seeall)
 
 
 function index() 
-    local e = entry({"admin","system","power"},template("poweroffdevice/poweroffdevice"), _("PowerOff"), 92)
+    local e = entry({"admin","system","poweroff"},template("poweroffdevice/poweroffdevice"), _("PowerOff"), 92)
     e.dependent=false
     e.acl_depends = { "luci-app-poweroff" }
 	entry({"admin","system","poweroff","poweroff"},post("action_poweroff"))
