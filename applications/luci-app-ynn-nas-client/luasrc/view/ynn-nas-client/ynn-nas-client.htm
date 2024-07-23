@@ -5,14 +5,15 @@ h2 {
 }
 
 </style>
-
-<h2 name="content"><%:ynn nas client name%></h2>
-<em style="color:green" id="start"><%:ynn nas client already start%></em>
-<em style="color:red" id="stop"><%:ynn nas client already stop%></em>
-<hr>
-<div class="btns">
-	<input class="cbi-button cbi-button-apply btn" type="button" value="<%:ynn nas client start%>" onclick="start(this)" />
-	<input class="cbi-button cbi-button-apply btn" type="button" value="<%:ynn nas client restart%>" onclick="restart(this)" />
+<div>
+	<h2 name="content"><%:ynn nas client name%></h2>
+	<em style="color:green" id="start"><%:ynn nas client already start%></em>
+	<em style="color:red" id="stop"><%:ynn nas client already stop%></em>
+	<hr>
+	<div class="btns">
+		<input class="cbi-button cbi-button-apply btn" type="button" value="<%:ynn nas client start%>" onclick="start(this)" />
+		<input class="cbi-button cbi-button-apply btn" type="button" value="<%:ynn nas client restart%>" onclick="restart(this)" />
+	</div>
 </div>
 
 <div class="cbi-section cbi-tblsection" style="display:none">
@@ -42,7 +43,9 @@ h2 {
 		(new XHR()).post("<%=controller%>admin/nas/ynn-nas-client/restart", { token: "<%=token%>" }, check);
 	}
 	function getdisk(button) {
-		(new XHR()).post("<%=controller%>admin/nas/ynn-nas-client/disk", { token: "<%=token%>" }, check);
+		(new XHR()).post("<%=controller%>admin/nas/ynn-nas-client/disk", { token: "<%=token%>" }, function(rsp) {
+			console.log(rsp)
+		});
 	}
 //]]></script>
 <%+footer%>

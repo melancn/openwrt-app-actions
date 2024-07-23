@@ -16,7 +16,7 @@ function start()
     luci.sys.exec("/etc/init.d/ynn-tunnel start")
 end
 
-function start()
+function restart()
     luci.sys.exec("/etc/init.d/ynn-nas-client restart")
     luci.sys.exec("/etc/init.d/ynn-tunnel start")
 end
@@ -31,7 +31,7 @@ function check()
 end
 
 function disk()
-    local json=luci.sys.call("lsblk --json /dev/sda")
+    local json=luci.sys.exec("lsblk --json /dev/sda")
 	luci.http.header("Content-Type","application/json")
 	luci.http.write(json)
 end
