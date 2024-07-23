@@ -1,0 +1,22 @@
+<%+header%>
+<style title="text/css">
+h2 {
+	margin: 1rem;
+}
+
+</style>
+
+<h2 name="content"><%:ynn nas client name%></h2>
+<em style="color:green"><%:ynn nas client already start%></em>
+<hr>
+<script type="text/javascript">//<![CDATA[
+	function pw(button) {
+		document.getElementById("pw-message").parentNode.style.display = "";
+
+		(new XHR()).post("<%=controller%>/admin/nas/ynn-nas-client/check", { token: "<%=token%>" }, check);
+	}
+//]]></script>
+
+<input class="cbi-button cbi-button-apply btn" type="button" value="<%:ynn nas client start%>" onclick="pw(this)" />
+
+<%+footer%>
