@@ -13,3 +13,6 @@ msgstr "影牛牛NAS服务未启动"
 msgid "ynn nas client start"
 msgstr "启动服务"
 
+msgid "ynn nas client restart"
+msgstr "重动服务"
+

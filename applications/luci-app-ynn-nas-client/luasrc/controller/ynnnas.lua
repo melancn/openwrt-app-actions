@@ -2,15 +2,22 @@
 module("luci.controller.ynnnas", package.seeall)
 
 function index() 
-    local e = entry({"admin","nas","ynn"},template("ynn-nas-client/ynn-nas-client"), _("ynn nas"), 92)
+    local e = entry({"admin","nas","ynnnas"},template("ynn-nas-client/ynn-nas-client"), _("ynn nas"), 92)
     e.dependent = false
     e.i18n = "ynn-nas-client"
 	entry({"admin","nas","ynn-nas-client","start"},post("start"))
+	entry({"admin","nas","ynn-nas-client","restart"},post("restart"))
 	entry({"admin","nas","ynn-nas-client","check"},call("check"))
+	entry({"admin","nas","ynn-nas-client","disk"},call("disk"))
 end
 
 function start()
     luci.sys.exec("/etc/init.d/ynn-nas-client start")
+    luci.sys.exec("/etc/init.d/ynn-tunnel start")
+end
+
+function start()
+    luci.sys.exec("/etc/init.d/ynn-nas-client restart")
     luci.sys.exec("/etc/init.d/ynn-tunnel start")
 end
 
@@ -21,4 +28,10 @@ function check()
 	else
 		luci.http.write("0")
 	end
+end
+
+function disk()
+    local json=luci.sys.call("lsblk --json /dev/sda")
+	luci.http.header("Content-Type","application/json")
+	luci.http.write(json)
 end

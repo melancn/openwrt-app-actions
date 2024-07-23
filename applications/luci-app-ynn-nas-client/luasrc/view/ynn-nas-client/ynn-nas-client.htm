@@ -10,6 +10,17 @@ h2 {
 <em style="color:green" id="start"><%:ynn nas client already start%></em>
 <em style="color:red" id="stop"><%:ynn nas client already stop%></em>
 <hr>
+<div class="btns">
+	<input class="cbi-button cbi-button-apply btn" type="button" value="<%:ynn nas client start%>" onclick="start(this)" />
+	<input class="cbi-button cbi-button-apply btn" type="button" value="<%:ynn nas client restart%>" onclick="restart(this)" />
+</div>
+
+<div class="cbi-section cbi-tblsection" style="display:none">
+	<table class="table cbi-section-table">
+		<thead><tr class="tr cbi-section-table-titles anonymous"><th class="th cbi-section-table-cell" data-widget="value">设备</th><th class="th cbi-section-table-cell" data-widget="value">容量</th><th class="th cbi-section-table-cell" data-widget="value">操作</th></tr></thead>
+		<tbody><tr class="tr cbi-section-table-row"><td class="td cbi-value-field"><b>/dev/sda</b></td><td class="td cbi-value-field"><b>7.3 TiB</b></td><td class="td cbi-value-field"><button class="btn cbi-button cbi-button-apply" title="详情">详情</button></td></tr></tbody>
+	</table>
+</div>
 <script type="text/javascript">//<![CDATA[
 	function check() {
 		document.getElementById("stop").style.display = "none";
@@ -27,8 +38,11 @@ h2 {
 	function start(button) {
 		(new XHR()).post("<%=controller%>admin/nas/ynn-nas-client/start", { token: "<%=token%>" }, check);
 	}
+	function restart(button) {
+		(new XHR()).post("<%=controller%>admin/nas/ynn-nas-client/restart", { token: "<%=token%>" }, check);
+	}
+	function getdisk(button) {
+		(new XHR()).post("<%=controller%>admin/nas/ynn-nas-client/disk", { token: "<%=token%>" }, check);
+	}
 //]]></script>
-
-<input class="cbi-button cbi-button-apply btn" type="button" value="<%:ynn nas client start%>" onclick="start(this)" />
-
 <%+footer%>
