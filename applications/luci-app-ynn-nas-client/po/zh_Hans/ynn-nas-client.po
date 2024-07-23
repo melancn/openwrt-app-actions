@@ -1,14 +1,8 @@
-msgid "ynn nas"
-msgstr "影牛牛"
-
 msgid "ynn nas client name"
 msgstr "影牛牛NAS客户端"
 
 msgid "ynn nas client already start"
 msgstr "影牛牛NAS服务已启动"
-
-msgid "ynn nas client already stop"
-msgstr "影牛牛NAS服务未启动"
 
 msgid "ynn nas client start"
 msgstr "启动服务"

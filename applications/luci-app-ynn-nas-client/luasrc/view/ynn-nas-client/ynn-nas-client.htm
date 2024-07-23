@@ -7,16 +7,25 @@ h2 {
 </style>
 
 <h2 name="content"><%:ynn nas client name%></h2>
-<em style="color:green"><%:ynn nas client already start%></em>
+<em style="color:green" id="start"><%:ynn nas client already start%></em>
+<em style="color:red" id="stop"><%:ynn nas client already stop%></em>
 <hr>
 <script type="text/javascript">//<![CDATA[
-	function pw(button) {
-		document.getElementById("pw-message").parentNode.style.display = "";
+	function check() {
+		document.getElementById("stop").style.display = "none";
+		document.getElementById("start").style.display = "none";
 
-		(new XHR()).post("<%=controller%>/admin/nas/ynn-nas-client/check", { token: "<%=token%>" }, check);
+		(new XHR()).post("<%=controller%>admin/nas/ynn-nas-client/check", { token: "<%=token%>" }, function(data) {
+			console.log(res)
+			
+		});
+	}
+	check()
+	function start(button) {
+		(new XHR()).post("<%=controller%>admin/nas/ynn-nas-client/start", { token: "<%=token%>" }, check);
 	}
 //]]></script>
 
-<input class="cbi-button cbi-button-apply btn" type="button" value="<%:ynn nas client start%>" onclick="pw(this)" />
+<input class="cbi-button cbi-button-apply btn" type="button" value="<%:ynn nas client start%>" onclick="start(this)" />
 
 <%+footer%>
