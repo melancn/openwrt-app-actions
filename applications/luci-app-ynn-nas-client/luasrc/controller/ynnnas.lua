@@ -16,5 +16,5 @@ end
 
 function check()
     local running=(luci.sys.call("[ ` ps -w | grep ynn-nas-client| grep -v grep | awk '{print $1}' | wc -l` -gt 0 ] > /dev/null") == 0)
-	luci.http.write(running)
+	luci.http.write(running ? "1":"0")
 end
