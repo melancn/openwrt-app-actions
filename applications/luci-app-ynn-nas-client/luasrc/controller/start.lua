@@ -6,7 +6,7 @@ function index()
     e.dependent = false
     e.i18n = "ynn-nas-client"
 	entry({"admin","nas","ynn-nas-client","start"},post("start"))
-	entry({"admin","nas","ynn-nas-client","check"},get("check"))
+	entry({"admin","nas","ynn-nas-client","check"},call("check"))
 end
 
 function start()

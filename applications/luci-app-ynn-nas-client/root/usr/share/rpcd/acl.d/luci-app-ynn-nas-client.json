@@ -1,0 +1,11 @@
+{
+	"luci-app-ynn-nas-client": {
+		"description": "Grant UCI access for luci-app-ynn-nas-client",
+		"read": {
+			"uci": [ "ynn-nas-client" ]
+		},
+		"write": {
+			"uci": [ "ynn-nas-client" ]
+		}
+	}
+}
