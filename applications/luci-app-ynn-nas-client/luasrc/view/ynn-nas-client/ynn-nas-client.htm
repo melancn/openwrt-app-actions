@@ -29,9 +29,9 @@ h2 {
 
 		(new XHR()).post("<%=controller%>admin/nas/ynn-nas-client/check", { token: "<%=token%>" }, function(rsp) {
 			if (rsp.response == '1') {
-				document.getElementById("start").style.display = "none";
+				document.getElementById("start").style.display = "block";
 			} else {
-				document.getElementById("stop").style.display = "none";
+				document.getElementById("stop").style.display = "block";
 			}
 		});
 	}
